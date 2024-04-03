@@ -8,17 +8,17 @@ metadata:
 spec:
   restartPolicy: OnFailure
   initContainers:
-    - name: init
+    - name: init-1
       image: alpine
       args: 
         - sleep
         - 10s
-    - name: init
+    - name: init-2
       image: alpine
       args: 
         - sleep
         - 10s
-    - name: init
+    - name: init-3
       image: alpine
       args: 
         - sleep
@@ -33,7 +33,7 @@ spec:
         requests:
           cpu: 250m 
           memory: 150Mi
-    - name: nginx-1
+    - name: nginx-2
       image: nginx
       resources:
         limits:
