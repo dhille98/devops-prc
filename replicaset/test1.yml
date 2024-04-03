@@ -1,0 +1,33 @@
+--- 
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: test-1
+  labels:
+    app: mgnix
+    version: v1.0
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: nginx
+  template: 
+    metadata: 
+      labels: 
+        app: nginx
+    spec: 
+      containers: 
+        - name: nginx-c
+          image: nginx
+          ports:
+            - containerPort: 80
+          resources: 
+            limits:
+              cpu: 1000m
+              memory: 500Mi
+            requests: 
+              cpu: 150m 
+              memory: 100Mi
+              
+
