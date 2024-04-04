@@ -19,7 +19,7 @@ spec:
     spec: 
       containers: 
         - name: nginx-c
-          image: nginx
+          image: httpd
           ports:
             - containerPort: 80
           resources: 
@@ -39,11 +39,12 @@ metadata:
   labels: 
     app: svc
 spec: 
-  type: ClusterIP
+  type: NodePort
   selector: 
     app: nginx
   ports:
     - port: 80
       targetPort: 80
+      nodePort: 31500
              
 
