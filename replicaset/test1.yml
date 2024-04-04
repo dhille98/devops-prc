@@ -29,5 +29,21 @@ spec:
             requests: 
               cpu: 150m 
               memory: 100Mi
-              
+
+
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: ng-svc
+  labels: 
+    app: svc
+spec: 
+  type: ClusterIP
+  selector: 
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+             
 
