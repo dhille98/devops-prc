@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: pod-spc
-          image: dhillevajja/spc-march:43
+          image: jenkins/jenkins:lts-jdk17
           ports: 
             - containerPort: 8080
           
