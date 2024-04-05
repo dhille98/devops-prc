@@ -1,6 +1,6 @@
 --- 
-apiVersion: apps/v1
-kind: service
+apiVersion: v1
+kind: Service
 metadata:
   name: spc-svc
   labels:
